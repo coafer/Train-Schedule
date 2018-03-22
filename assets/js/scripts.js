@@ -75,15 +75,15 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     var tRemainder = diffTime % frequency;
     console.log(tRemainder); 
 
-    //Next train arrival
-    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-    var nextT = moment(nextTrain).format("hh:mm");
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm")); 
 
     //Minutes remaining to the arrival
     var tMinutesTillTrain = frequency - tRemainder;
     console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
+    //Next train arrival
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    var nextT = moment(nextTrain).format("hh:mm");
+    console.log("ARRIVAL TIME: " + nextT);
 
 
     // Add each train's data into the table
